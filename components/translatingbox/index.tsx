@@ -8,6 +8,7 @@ import { Separator } from "@/components/ui/separator";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { toast, Toaster } from "sonner";
 
 type TranslatingBoxProps = {
   translatingText: string;
@@ -37,6 +38,7 @@ export default function TranslatingBox({
         transition={{ duration: 0.5, type: "spring", stiffness: 80, damping: 18 }}
         className="h-fit md:h-100 flex flex-col justify-between bg-secondary p-1 md:p-5 rounded-2xl border-2 border-accent shadow-none"
       >
+        <Toaster />
         <div className="flex items-center flex-wrap justify-between gap-4 p-1 md:p-4 text-muted-foreground text-2xl shadow-none">
           <div className="flex items-center flex-wrap md:gap-4">
             {topLanguages.map((lang) => {
@@ -133,8 +135,18 @@ export default function TranslatingBox({
             <Button variant="default" className="bg-transparent text-accent border-2 border-accent p-1 rounded-xl shadow-none" size="icon">
               <Image src={"/sound_max_fill.svg"} alt="ses iconu" width={70} height={70} />
             </Button>
-            <Button variant="default" className="bg-transparent text-accent border-2 p-1 rounded-xl shadow-none" size="icon">
-              <Image src={"/Copy.svg"} alt="ses iconu" width={70} height={70} />
+            <Button
+              variant="default"
+              className="bg-transparent text-accent border-2 p-1 rounded-xl shadow-none"
+              size="icon"
+              onClick={() => {
+                if (navigator && navigator.clipboard) {
+                  navigator.clipboard.writeText(translatingText);
+                  toast.success("Kopyalandı")
+                }
+              }}
+            >
+              <Image src={"/Copy.svg"} alt="kopyala iconu" width={70} height={70} />
             </Button>
           </div>
           <div className="flex justify-end items-center py-2 shadow-none">
