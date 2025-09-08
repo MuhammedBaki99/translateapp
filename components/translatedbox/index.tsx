@@ -24,9 +24,9 @@ export default function TranslatedBox({
   const topLanguages = ["English", "French"];
 
   return (
-    <div className="h-100 flex flex-col justify-between bg-secondary p-5 rounded-2xl border-2 border-accent shadow-none">
-      <div className="flex items-center justify-between gap-4 p-4 text-muted-foreground text-2xl shadow-none">
-        <div className="flex items-center gap-4">
+    <div className="h-fit md:h-100 flex flex-col justify-between bg-secondary p-1 md:p-5 rounded-2xl border-2 border-accent shadow-none">
+      <div className="flex items-center flex-wrap justify-between gap-4 p-1 md:p-4 text-muted-foreground text-2xl shadow-none">
+        <div className="flex items-center flex-wrap md:gap-4">
           {topLanguages.map((lang) => {
             const isSelected = translatedLanguage === lang;
             return (

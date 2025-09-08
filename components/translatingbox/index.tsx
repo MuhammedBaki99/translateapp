@@ -29,8 +29,8 @@ export default function TranslatingBox({
   // Translate handled by parent via onTranslate
 
   return (
-    <div className="h-100 flex flex-col justify-between bg-secondary p-5 rounded-2xl border-2 border-accent shadow-none">
-      <div className="flex items-center gap-4 p-4 text-muted-foreground text-2xl shadow-none">
+    <div className="h-100 flex flex-col justify-between bg-secondary p-1 md:p-5 rounded-2xl border-2 border-accent shadow-none">
+      <div className="flex items-center flex-wrap gap-4 p-1 md:p-4 text-muted-foreground text-2xl shadow-none">
         {topLanguages.map((lang) => {
           const isSelected = selectedLanguage === lang;
           return (
