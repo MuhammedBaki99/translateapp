@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body
-        className={`antialiased bg-[url("/hero_img-sm.jpg")] sm:bg-[url("/hero_img.jpg")] bg-no-repeat bg-size-[100%] bg-foreground`}
+        className={`antialiased bg-[url("/hero_img-sm.jpg")] sm:bg-[url("/hero_img.jpg")] bg-no-repeat bg-size-[100%] bg-background`}
       >
         {children}
       </body>
