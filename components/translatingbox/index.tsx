@@ -114,9 +114,6 @@ export default function TranslatingBox({
               </DropdownMenu>
             </div>
           </div>
-          <Button variant={"default"} className="w-fit bg-transparent shadow-none border-3 border-accent">
-            <Image src={"/Horizontal_top_left_main.svg"} width={20} height={10} alt="değiştirme ikonu" />
-          </Button>
         </div>
         <Separator className="my-2 bg-accent" />
         <div className="h-full">
